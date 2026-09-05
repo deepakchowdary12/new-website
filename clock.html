@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">⏰ World Clock</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="clock.html" class="nav-link active">Clock</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="clock-header">
+            <h1>World Clock</h1>
+            <p>Real-time display of current time in different time zones</p>
+        </div>
+
+        <!-- Local Time Display -->
+        <div class="local-time-section">
+            <div class="local-time-card">
+                <div class="local-time-label">Your Local Time</div>
+                <div class="local-time-display">
+                    <div class="time-digits" id="localTime">00:00:00</div>
+                    <div class="time-period" id="localPeriod">AM</div>
+                </div>
+                <div class="local-date" id="localDate">Monday, January 1, 2024</div>
+            </div>
+        </div>
+
+        <!-- Time Zone Clocks -->
+        <div class="clocks-container">
+            <!-- Clock 1: New York -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">New York</span>
+                    <span class="timezone-code">EST</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="America/New_York">00:00:00</div>
+                    <div class="time-period" data-timezone-period="America/New_York">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-America/New_York">UTC-5</div>
+            </div>
+
+            <!-- Clock 2: London -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">London</span>
+                    <span class="timezone-code">GMT</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Europe/London">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Europe/London">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Europe/London">UTC+0</div>
+            </div>
+
+            <!-- Clock 3: Paris -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Paris</span>
+                    <span class="timezone-code">CET</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Europe/Paris">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Europe/Paris">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Europe/Paris">UTC+1</div>
+            </div>
+
+            <!-- Clock 4: Dubai -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Dubai</span>
+                    <span class="timezone-code">GST</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Asia/Dubai">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Asia/Dubai">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Asia/Dubai">UTC+4</div>
+            </div>
+
+            <!-- Clock 5: India -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">India</span>
+                    <span class="timezone-code">IST</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Asia/Kolkata">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Asia/Kolkata">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Asia/Kolkata">UTC+5:30</div>
+            </div>
+
+            <!-- Clock 6: Singapore -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Singapore</span>
+                    <span class="timezone-code">SGT</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Asia/Singapore">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Asia/Singapore">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Asia/Singapore">UTC+8</div>
+            </div>
+
+            <!-- Clock 7: Tokyo -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Tokyo</span>
+                    <span class="timezone-code">JST</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Asia/Tokyo">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Asia/Tokyo">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Asia/Tokyo">UTC+9</div>
+            </div>
+
+            <!-- Clock 8: Sydney -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Sydney</span>
+                    <span class="timezone-code">AEDT</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="Australia/Sydney">00:00:00</div>
+                    <div class="time-period" data-timezone-period="Australia/Sydney">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-Australia/Sydney">UTC+11</div>
+            </div>
+
+            <!-- Clock 9: Los Angeles -->
+            <div class="clock-card">
+                <div class="clock-header-title">
+                    <span class="timezone-name">Los Angeles</span>
+                    <span class="timezone-code">PST</span>
+                </div>
+                <div class="clock-display">
+                    <div class="time-digits" data-timezone="America/Los_Angeles">00:00:00</div>
+                    <div class="time-period" data-timezone-period="America/Los_Angeles">AM</div>
+                </div>
+                <div class="timezone-offset" id="offset-America/Los_Angeles">UTC-8</div>
+            </div>
+        </div>
+
+        <!-- Add Custom Timezone -->
+        <div class="custom-timezone-section">
+            <h2>Add Custom Time Zone</h2>
+            <div class="custom-input-group">
+                <input type="text" id="customTzName" placeholder="City name (e.g., Berlin)">
+                <input type="text" id="customTzTimezone" placeholder="Timezone (e.g., Europe/Berlin)">
+                <button id="addCustomTz" class="add-btn">Add Clock</button>
+            </div>
+            <div id="customClocks" class="custom-clocks-container"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 World Clock. All rights reserved.</p>
+    </footer>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
