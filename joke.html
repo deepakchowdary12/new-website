@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="joke-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">😂 Joke Generator</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="clock.html" class="nav-link">Clock</a></li>
+                <li><a href="joke.html" class="nav-link active">Jokes</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="joke-header">
+            <h1>Random Joke Generator</h1>
+            <p>Get a laugh with hilarious jokes from around the internet</p>
+        </div>
+
+        <!-- Category Selection -->
+        <div class="category-section">
+            <h2>Select Joke Category</h2>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="any">Any</button>
+                <button class="category-btn" data-category="programming">Programming</button>
+                <button class="category-btn" data-category="knock-knock">Knock-Knock</button>
+                <button class="category-btn" data-category="general">General</button>
+                <button class="category-btn" data-category="spooky">Spooky</button>
+            </div>
+        </div>
+
+        <!-- Joke Display -->
+        <div class="joke-container">
+            <div class="joke-card">
+                <div class="joke-icon">😂</div>
+                <div class="joke-content">
+                    <div class="joke-text" id="jokeText">
+                        Click the button below to get a random joke!
+                    </div>
+                    <div class="joke-setup" id="jokeSetup" style="display: none;"></div>
+                    <div class="joke-delivery" id="jokeDelivery" style="display: none;"></div>
+                </div>
+                <div class="joke-type" id="jokeType">Ready to laugh?</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button class="btn btn-primary" id="getJokeBtn">Get Joke</button>
+            <button class="btn btn-secondary" id="nextJokeBtn">Next Joke</button>
+            <button class="btn btn-success" id="copyJokeBtn">Copy Joke</button>
+        </div>
+
+        <!-- Loading and Error States -->
+        <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading a hilarious joke...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+
+        <!-- Joke History -->
+        <div class="history-section">
+            <h2>Joke History</h2>
+            <div class="history-controls">
+                <button class="history-btn" id="clearHistoryBtn">Clear History</button>
+                <span class="history-count" id="historyCount">0 jokes saved</span>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="empty-history">No jokes saved yet. Get some jokes and they'll appear here!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Joke Generator. Powered by JokeAPI. All rights reserved.</p>
+    </footer>
+
+    <script src="joke-script.js"></script>
+</body>
+</html>
